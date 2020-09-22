@@ -21,9 +21,6 @@ class TeatroColon(unittest.TestCase):
         self.assertEqual(self.driver.find_element_by_css_selector('h1.page-header > span:nth-child(1)').text, 'DONACIONES')
     
     def test_busqueda_orquesta(self):
-        #self.driver.find_element_by_class_name('btn-search').click()
-        #self.driver.find_element_by_name('keys').send_keys('orquesta')
-        #self.driver.find_element_by_name('keys').send_keys(Keys.ENTER)
         self.indexPage.search('orquesta')
         self.driver.find_element_by_css_selector('div.item_search:nth-child(4) > span:nth-child(1) > h4:nth-child(1) > strong:nth-child(1) > a:nth-child(1)').click()
         self.assertEqual(self.driver.find_element_by_css_selector('h1.page-header > span:nth-child(1)').text, 'ORQUESTA FILARMÓNICA DE BUENOS AIRES')
